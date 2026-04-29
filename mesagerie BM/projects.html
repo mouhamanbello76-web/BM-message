@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>BM Message · Projets</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div id="app">
+    <div id="projects-screen" class="screen active">
+      <header>
+        <div class="header-left">
+          <a href="home.html" class="icon-btn"><i class="fas fa-arrow-left"></i></a>
+          <span>Projets</span>
+        </div>
+        <div class="header-right">
+          <span id="user-badge"></span>
+        </div>
+      </header>
+
+      <div class="projects-container">
+        
+        <!-- ===== PROJET EN COURS : WHERE I'M ===== -->
+        <div class="project-header">
+          <h2 class="project-title-main">
+            <i class="fas fa-play-circle"></i> Projet en cours
+          </h2>
+          <div class="project-badge ongoing">En développement</div>
+        </div>
+
+        <div class="project-card featured" id="current-project-card">
+          <div class="project-name">
+            <h1>WHERE I'M</h1>
+            <span class="game-tag">Aventure · Mystère · Survival Horror</span>
+          </div>
+
+          <!-- Espace pour l'image principale -->
+          <div class="media-container" id="main-image-container">
+            <img id="main-game-image" src="assets/images/where-im.jpg" alt="Where I'm - Image principale" onerror="this.src='https://placehold.co/800x400/1a1a1a/ff0000?text=Where+I%27m+-+Image+principale'">
+            <div class="image-upload-hint" id="image-upload-hint">
+              <i class="fas fa-cloud-upload-alt"></i>
+              <span>Cliquez pour changer l'image</span>
+            </div>
+          </div>
+
+          <!-- Vidéo de bande-annonce -->
+          <div class="media-container video-container" id="video-container">
+            <video id="game-trailer" controls poster="assets/images/where-im-poster.jpg">
+              <source src="assets/videos/where-im-trailer.mp4" type="video/mp4">
+              <p>Votre navigateur ne supporte pas la lecture vidéo.</p>
+            </video>
+            <div class="video-upload-hint" id="video-upload-hint">
+              <i class="fas fa-video"></i>
+              <span>Ajouter une bande-annonce</span>
+            </div>
+          </div>
+
+          <!-- Histoire détaillée -->
+          <div class="story-section">
+            <h3><i class="fas fa-book-open"></i> L'histoire</h3>
+            <div class="story-content">
+              <p>Vous vous réveillez dans une <strong>ville inconnue</strong>, enveloppée d'un <strong>brouillard épais et oppressant</strong>. Vous ne savez pas qui vous êtes, ni comment vous êtes arrivé ici. Vos seuls souvenirs sont des fragments flous, comme des rêves oubliés.</p>
+              
+              <p>La ville semble <strong>déserte... ou presque</strong>. Des ombres se déplacent dans la brume. Des <strong>créatures bizarres</strong> vous observent depuis les ruelles sombres. Parfois, vous apercevez un objet - une clé, une lettre - mais quand vous vous approchez, <strong>il disparaît comme par magie</strong>.</p>
+              
+              <p>Au fil de votre exploration, vous découvrez des <strong>indices troublants</strong> : les humains ont été <strong>enlevés</strong>. Des êtres venus d'une autre dimension préparent leur <strong>remplacement</strong>. Vous êtes peut-être le dernier humain libre.</p>
+              
+              <p>Vous trouvez des <strong>portails dimensionnels</strong>, des <strong>objets mystérieux</strong> aux pouvoirs étranges. Chaque découverte vous rapproche de la vérité, mais aussi du danger. Des <strong>lettres anciennes</strong> racontent l'histoire d'une civilisation disparue. Des <strong>clés énigmatiques</strong> ouvrent des portes vers d'autres mondes.</p>
+              
+              <p>Le brouillard semble vivant. Il murmure. Il vous guide... ou vous égare ? <strong>Qui êtes-vous vraiment ? Pourquoi êtes-vous ici ? Et surtout... pourrez-vous sauver l'humanité ?</strong></p>
+            </div>
+            <div class="story-features">
+              <span><i class="fas fa-skull"></i> Ambiance horrifique</span>
+              <span><i class="fas fa-puzzle-piece"></i> Énigmes mystérieuses</span>
+              <span><i class="fas fa-door-open"></i> Mondes parallèles</span>
+              <span><i class="fas fa-search"></i> Exploration libre</span>
+            </div>
+          </div>
+
+          <!-- Zone de vote -->
+          <div class="vote-section">
+            <div class="vote-info">
+              <span class="vote-count" id="vote-count">0</span>
+              <span class="vote-label">personnes soutiennent ce projet</span>
+            </div>
+            <button id="vote-project-btn" class="vote-btn">
+              <i class="fas fa-thumbs-up"></i> Soutenir le projet
+            </button>
+          </div>
+
+          <!-- Administration CEO -->
+          <div id="admin-media-section" class="admin-media-section" style="display:none;">
+            <h4><i class="fas fa-crown"></i> Administration (CEO)</h4>
+            <div class="admin-buttons">
+              <button id="update-image-btn" class="admin-btn"><i class="fas fa-image"></i> Changer l'image</button>
+              <button id="update-video-btn" class="admin-btn"><i class="fas fa-video"></i> Changer la vidéo</button>
+              <input type="file" id="image-upload-input" accept="image/*" style="display:none">
+              <input type="file" id="video-upload-input" accept="video/*" style="display:none">
+            </div>
+            <div class="admin-text">
+              <input type="text" id="project-title-input" placeholder="Titre du projet" style="width:100%; margin-bottom:10px;">
+              <textarea id="project-story-input" placeholder="Histoire du projet" rows="6" style="width:100%; margin-bottom:10px;"></textarea>
+              <button id="update-story-btn" class="btn-red">Mettre à jour l'histoire</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== JEUX DÉJÀ FINIS : MONSTER FOREST ===== -->
+        <div class="project-header">
+          <h2 class="project-title-main">
+            <i class="fas fa-trophy"></i> Jeux déjà finis
+          </h2>
+          <div class="project-badge completed">Terminé</div>
+        </div>
+
+        <div class="project-card completed-game" id="monster-forest-card">
+          <div class="project-name">
+            <h2>MONSTER FOREST 1</h2>
+            <span class="game-tag">FPS · Horreur · Survie</span>
+          </div>
+
+          <!-- Images du jeu Monster Forest -->
+          <div class="gallery-section">
+            <h3><i class="fas fa-images"></i> Galerie</h3>
+            <div class="image-gallery" id="monster-forest-gallery">
+              <div class="gallery-item">
+                <img src="assets/images/monster-forest-1.jpg" alt="Monster Forest - Gameplay 1" onerror="this.src='https://placehold.co/400x250/1a1a1a/ff0000?text=Monster+Forest+Screenshot'">
+                <span class="gallery-caption">Forêt brumeuse</span>
+              </div>
+              <div class="gallery-item">
+                <img src="assets/images/monster-forest-2.jpg" alt="Monster Forest - Gameplay 2" onerror="this.src='https://placehold.co/400x250/1a1a1a/ff0000?text=Monster+Forest+Screenshot'">
+                <span class="gallery-caption">Affrontement</span>
+              </div>
+              <div class="gallery-item add-image" id="add-gallery-image">
+                <i class="fas fa-plus"></i>
+                <span>Ajouter une image</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vidéo du jeu -->
+          <div class="media-container video-container">
+            <video id="monster-forest-video" controls poster="assets/images/monster-forest-poster.jpg">
+              <source src="assets/videos/monster-forest-trailer.mp4" type="video/mp4">
+              <p>Bande-annonce disponible prochainement</p>
+            </video>
+            <div class="video-upload-hint" id="mf-video-hint" style="display:none;">
+              <i class="fas fa-video"></i>
+              <span>Ajouter une vidéo</span>
+            </div>
+          </div>
+
+          <!-- Description du jeu -->
+          <div class="story-section">
+            <h3><i class="fas fa-gamepad"></i> Description</h3>
+            <div class="story-content">
+              <p><strong>Monster Forest 1</strong> est un jeu de tir à la première personne (FPS) où vous incarnez un survivant perdu dans une <strong>forêt maudite et enveloppée de brouillard</strong>.</p>
+              
+              <p>Armé de votre fidèle fusil à pompe et d'une lampe torche, vous devez <strong>survivre aux créatures de la nuit</strong> qui rodent dans l'obscurité. Des hurlements résonnent entre les arbres. Des yeux brillent dans le noir.</p>
+              
+              <p>Votre mission : trouver la sortie avant que les monstres ne vous trouvent. Mais attention... <strong>plus vous avancez, plus les créatures deviennent agressives</strong>. La forêt semble vivante, et elle vous veut du mal.</p>
+              
+              <p><strong>Caractéristiques :</strong></p>
+              <ul>
+                <li>🔫 Gameplay FPS intense</li>
+                <li>🌫️ Environnement immersif dans le brouillard</li>
+                <li>👾 Ennemis variés et intelligents</li>
+                <li>🔦 Gestion de la lampe torche et des munitions</li>
+                <li>🎮 3 niveaux de difficulté</li>
+              </ul>
+            </div>
+            <div class="game-badge-completed">
+              <i class="fas fa-check-circle"></i><a href="https://black-matrix-studio-game.netlify.app"> Disponible - Téléchargement 
+            </div>
+          </div>
+        </div>
+
+        <!-- Site officiel -->
+        <div class="official-site">
+          <a href="https://black-matrix-studio-game.netlify.app" target="_blank" class="official-link">
+            <i class="fas fa-globe"></i>
+            www.black-matrix-studio-game.com
+            <i class="fas fa-external-link-alt"></i>
+          </a>
+          <p>© 2026 Black Matrix Studio Game - Tous droits réservés</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/projects.js"></script>
+</body>
+</html>

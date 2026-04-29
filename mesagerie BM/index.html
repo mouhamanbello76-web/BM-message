@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>BM Message · Connexion</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div id="app">
+    <div id="auth-screen" class="screen active">
+      <div class="auth-container">
+        <div class="logo">
+          <span class="bm">BM</span>
+          <span class="message-logo">MESSAGE</span>
+        </div>
+
+        <div id="login-form" class="auth-form">
+          <input type="tel" id="auth-phone" placeholder="Numéro (ex: 691288089)" inputmode="numeric" autocomplete="tel">
+          <button id="send-code-btn" class="btn-red">Envoyer le code</button>
+          <div id="code-section" style="display:none;">
+            <input type="text" id="auth-code" placeholder="Code SMS">
+            <button id="verify-code-btn" class="btn-red">Vérifier</button>
+          </div>
+        </div>
+
+        <div id="loader-container" style="display:none;">
+          <div class="loader-logo">
+            <span class="bm-loader">BM</span>
+            <span class="loader-text">Chargement…</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill"></div></div>
+        </div>
+
+        <div id="debug-info" class="debug-info"></div>
+        <div id="recaptcha-container"></div>
+        <div class="certified-info"><i class="fas fa-shield-alt"></i> Black Matrix Studio Game</div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

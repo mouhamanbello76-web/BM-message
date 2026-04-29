@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>BM Message · Accueil</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div id="app">
+    <div id="home-screen" class="screen active">
+      <header>
+        <div class="header-left">
+          <span class="bm-small">BM</span>
+          <span>Accueil</span>
+        </div>
+        <div class="header-right">
+          <span id="user-greeting"></span>
+          <button id="logout-btn" class="icon-btn" title="Déconnexion"><i class="fas fa-sign-out-alt"></i></button>
+        </div>
+      </header>
+
+      <div class="home-container">
+        <!-- Navigation principale -->
+        <div class="quick-links">
+          <a href="chat.html" class="quick-link-card">
+            <i class="fas fa-comments"></i>
+            <span>Messagerie</span>
+          </a>
+          <a href="projects.html" class="quick-link-card">
+            <i class="fas fa-gamepad"></i>
+            <span>Projets</span>
+          </a>
+          <a href="settings.html" class="quick-link-card">
+            <i class="fas fa-cog"></i>
+            <span>Paramètres</span>
+          </a>
+        </div>
+
+        <!-- Message de bienvenue -->
+        <div class="welcome-card" id="welcome-card">
+          <div class="assistant-avatar">
+            <i class="fas fa-robot"></i>
+          </div>
+          <div class="assistant-message" id="assistant-message">
+            Chargement...
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/home.js"></script>
+</body>
+</html>

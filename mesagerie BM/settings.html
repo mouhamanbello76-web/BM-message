@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>BM Message · Paramètres</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div id="app">
+    <div id="settings-screen" class="screen active">
+      <header>
+        <div class="header-left">
+          <a href="home.html" class="icon-btn"><i class="fas fa-arrow-left"></i></a>
+          <span>Paramètres</span>
+        </div>
+      </header>
+      <div class="settings-container">
+        <div class="settings-card">
+          <h3><i class="fas fa-user"></i> Mon profil</h3>
+          <p><strong>Nom :</strong> <span id="settings-name"></span></p>
+          <p><strong>Téléphone :</strong> <span id="settings-phone"></span></p>
+          <p><strong>Rôle :</strong> <span id="settings-role"></span></p>
+        </div>
+        
+        <div class="settings-card">
+          <h3><i class="fas fa-users"></i> Membres du groupe</h3>
+          <div id="members-list"></div>
+          <div class="share-bar">
+            <div class="share-ceo" style="width:70%;"></div>
+            <div class="share-dir" style="width:15%;"></div>
+            <div class="share-dir" style="width:15%;"></div>
+          </div>
+          <p style="font-size:12px; color:#888; margin-top:5px;">BM Studio détient 100% des parts</p>
+        </div>
+        
+        <div class="settings-card">
+          <h3><i class="fas fa-info-circle"></i> À propos</h3>
+          <p><strong>Black Matrix Studio Game</strong> a été créé par <strong>Mr. Bello</strong> en 2026.</p>
+          <p>Objectif : Créer des jeux vidéo innovants 🎮</p>
+          <a href="https://black-matrix-studio-game.netlify.app" style="color:#ff0000; margin-top:10px; display:inline-block;"><i class="fas fa-external-link-alt"></i> Site officiel</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/settings.js"></script>
+</body>
+</html>
